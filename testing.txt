@@ -1,0 +1,305 @@
+Below is a list of the methods I would test for each class (class names are in alphabetical order):
+
+
+
+Anduril Class
+
+==========
+
+- Method: getDescription()
+Expected: return a description for the Anduril class - "One Sword to Rule Them All".
+
+- Method: increaseResources(int number)
+
+Case 1: value = 10
+Expected: successfully sets Anduril resourceCounter to 1 (there is a limit of 1 for Anduril). 
+
+Case 2: value = -5 
+Expected: print out an error telling the user to try again.
+
+Case 3: value = 0
+Expected: print out an error telling the user to try again.
+
+
+
+Dagger Class
+
+==========
+
+- Method: getDescription()
+Expected: return a description for the Dagger class - "Preferred Weapon of Thieves".
+
+
+
+Dirt Class
+
+==========
+
+- Method: getDescription()
+Expected: return a description for the Dirt class - "Needed for Trees".
+
+
+
+EnchantedPoleArm Class 
+
+==========
+
+- Method: getDescription()
+Expected: return a description for the EnchantedPoleArm class - "Magical Enchanted Pole Arm".
+
+
+
+Iron Class 
+
+==========
+
+- Method: getDescription()
+Expected: return a description for the Iron class - "Not Great Near The Ocean".
+
+
+
+Javelin Class
+==========
+
+- Method: getDescription()
+Expected: return a description for the Javelin class - "Preferred Weapon Of Kids at High School Sports Days".
+
+
+
+Metal Class 
+
+==========
+
+- Method: isEnchanted()
+Expected: return true if enchanted. It's enchanted only if the boolean value in one of the Metal constructors is set to true. Otherwise, it's not enchanted and it should return false.
+
+- Method: toString()
+Expected: return the name, number of resources remaining, and enchantment status for a Metal object.
+
+
+
+Oak Class
+
+==========
+
+- Method: getDescription()
+Expected: return a description for the Oak class - "Nice for Furniture".
+
+
+
+Resource Class 
+
+==========
+
+- Method: increaseResources(int number)
+
+Case 1: value set to 10
+Expected: successfully increases Resource resourceCounter by 10
+
+- Method: decreaseResources(int number)
+
+Case 1: value set to 10
+Expected: successfully decreases Resource resourceCounter by 10
+
+- Method: resourceAvailable()
+Expected: checks if there more than zero resources available for a given resource. If so, it should return true.
+
+- Method: getNumber()
+Expected: return the number of resources for the calling object.
+
+- Method: getName()
+Expected: return the name of the resource for the calling object
+
+- Method: setNumber(int resourceCounter)
+
+Case 1: value set to 10
+Expected: sets the resourceCounter to 10 for the calling object.
+
+Case 2: value set to 50
+Expected: sets the resourceCounter to 50 for the calling object.
+
+- Method: setName(String name)
+Expected: set the name of the calling object to the string given as the argument.
+
+- Method: saveToDisk(String fileName)
+Expected: save the object into a file specified in the parameters.
+
+- Method: readFromDisk(String fileName)
+
+Case 1: set String value to an existing file
+Expected: read the object from the file and return it to the caller
+
+Case 2: set String value to a NON-existing file
+Expected: throw a FileNotFoundException
+
+- Method: toString()
+Expected: return the name and number of resources remaining
+
+
+
+Sand Class 
+
+==========
+
+- Method: getDescription()
+Expected: return a description for the Sand class - "Hot in the Sun".
+
+
+
+Seed Class 
+
+==========
+
+- Method: getDescription()
+Expected: return a description for the Seed class - "One Day a Mighty Tree".
+
+
+
+Steel Class 
+
+==========
+
+- Method: getDescription()
+Expected: return a description for the Steel class - "Cold Hard Steel".
+
+
+
+Sword Class
+
+==========
+
+- Method: getDescription()
+Expected: return a description for the Sword class - "Preferred Weapon of Poorer Warriors".
+
+
+
+Table Class 
+
+==========
+
+- Method: craft(Sword swordIngredient, Iron ironIngredient, Wood woodIngredient)
+
+Case 1: enter in ingredients with each ingredient (apart from the first) having at least 1 resource each.
+Expected: return the same Sword object that was passed in (swordIngredient) but with it's resourceCounter increased by 1.
+
+Case 2: enter in ingredients with any of the ingredients (apart from the first) having no resources.
+Expected: throw a ResourceExhausted exception
+
+- Method: craft(Javelin javelinIngredient, Wood woodIngredient)
+
+Case 1: enter in ingredients with each ingredient (apart from the first) having at least 1 resource each.
+Expected: return the same Javelin object that was passed in (javelinIngredient) but with it's resourceCounter increased by 1.
+
+Case 2: enter in ingredients with any of the ingredients (apart from the first) having no resources.
+Expected: throw a ResourceExhausted exception 
+
+- Method: craft(Anduril andurilIngredient, EnchantedPoleArm enchantedPoleArmIngredient, Sand sandIngredient, Seed seedIngredient, Steel steelIngredient)
+
+Case 1: enter in ingredients with each ingredient (apart from the first) having at least 1 resource each.
+Expected: return the same Anduril object that was passed in (andurilIngredient) but with it's resourceCounter increased by 1.
+
+Case 2: enter in ingredients with any of the ingredients (apart from the first) having no resources.
+Expected: throw a ResourceExhausted exception
+
+- Method: craft(Table tableIngredient, Iron ironIngredient, Sand sandIngredient, Steel steelIngredient, Wood woodIngredient)
+
+Case 1: enter in ingredients with each ingredient (apart from the first) having at least 1 resource each.
+Expected: return the same Table object that was passed in (tableIngredient) but with it's resourceCounter increased by 1.
+
+Case 2: enter in ingredients with any of the ingredients (apart from the first) having no resources.
+Expected: throw a ResourceExhausted exception
+
+- Method: craft(Dagger daggerIngredient, Steel steelIngredient)
+
+Case 1: enter in ingredients with each ingredient (apart from the first) having at least 1 resource each.
+Expected: return the same Dagger object that was passed in (daggerIngredient) but with it's resourceCounter increased by 1.
+
+Case 2: enter in ingredients with any of the ingredients (apart from the first) having no resources.
+Expected:
+
+- Method: craft(Wood woodIngredient, Oak oakIngredient)
+
+Case 1: enter in ingredients with each ingredient (apart from the first) having at least 1 resource each.
+Expected: return the same Wood object that was passed in (woodIngredient) but with it's resourceCounter increased by 1.
+
+Case 2: enter in ingredients with any of the ingredients (apart from the first) having no resources.
+Expected: throw a ResourceExhausted exception
+
+- Method: craft(Tree treeIngregient, Dirt dirtIngredient, Seed seedIngredient, 
+Water waterIngredient)
+
+Case 1: enter in ingredients with each ingredient (apart from the first) having at least 1 resource each.
+Expected: return the same Tree object that was passed in (treeIngredient) but with it's resourceCounter increased by 1.
+
+Case 2: enter in ingredients with any of the ingredients (apart from the first) having no resources.
+Expected: throw a ResourceExhausted exception
+
+- Method: craft(EnchantedPoleArm enchantedPoleArmIngredient, Metal metalIngredient, Sword swordIngredient)
+
+Case 1: enter in ingredients with each ingredient (apart from the first) having at least 1 resource each AND the metal ingredient that's passed in is enchanted.
+Expected: return the same EchantedPoleArm object that was passed in (enchantedPoleArmIngredient) but with it's resourceCounter increased by 1.
+
+Case 2: enter in ingredients with each ingredient (apart from the first) having at least 1 resource each AND the metal ingredient that's passed in is NOT enchanted.
+Expected: throw a ResourceNotEnchanted exception
+
+Case 3: enter in ingredients with any of the ingredients (apart from the first) having no resources.
+Expected: throw a ResourceExhausted exception 
+
+- Method: getDescription() 
+Expected: return a description for the Table class - "For All Of Your Crafting Needs".
+
+
+
+Tree Class 
+
+==========
+
+- Method: toString()
+Expected: return the name and number of resources remaining for a Tree object.
+
+
+
+Water Class 
+
+==========
+
+- Method: getDescription()
+Expected: return a description for the Water class - "Essence of Life".
+
+
+
+Weapon Class
+
+==========
+
+- Method: getDamageMin()
+Expected: return the minimum amount of damage a weapon can make.
+Should return:
+	- 2.0 for a Dagger object
+	- 30.0 for an Anduril object
+	- 5.0 for a Javelin object
+	- 8.0 for a Sword object
+	- 20.0 for an EnchantedPoleArm object
+
+- Method: getDamageMax()
+Expected: return the maximum amount of damage a weapon can make.
+Should return: 
+	- 5.0 for a Dagger object
+	- 80.0 for an Anduril object
+	- 10.0 for a Javelin object
+	- 15.0 for a Sword object
+	- 50.0 for and EnchantedPoleArm object
+
+- Method: isStronger()
+Expected: compare a weapons max damage with the max damage of the calling object. It should return true if the calling object's max damage is higher than the max damage of the weapon object passed in as an argument.
+
+- Method: toString()
+Expected: return the name, number of resources remaining, minimum damage, and maximum damage for a Weapon object.
+
+
+Wood Class 
+
+==========
+
+- Method: getDescription()
+Expected: return a description for the Wood class - "Processed Tree".
